@@ -5,23 +5,43 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  pathPrefix: `/who-pay-next`,
+  siteMetadata: {
+    title: `Who Pay Next Month`,
+    description: `Who have to pay Netflix`,
+    author: `jpnathan`,
+  },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Netflix Payer`,
+        short_name: `Netflix Payer`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
             family: `Roboto Mono`,
-            variants: [`400`, `700`]
+            variants: [`400`, `700`],
           },
           {
             family: `Roboto`,
-            subsets: [`latin`]
+            subsets: [`latin`],
           },
           {
             family: `Russo One`,
-            variants: [`400`, `700`]
+            variants: [`400`, `700`],
           },
         ],
       },
