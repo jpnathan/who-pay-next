@@ -28,22 +28,24 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Roboto Mono`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Roboto`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Russo One`,
-            variants: [`400`, `700`],
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: `Roboto Mono`,
+              variants: [`400`, `700`],
+            },
+            {
+              family: `Roboto`,
+              subsets: [`latin`],
+            },
+            {
+              family: `Russo One`,
+              variants: [`400`, `700`],
+            },
+          ],
+        },
       },
     },
   ],
