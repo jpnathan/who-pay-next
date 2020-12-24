@@ -18,9 +18,10 @@ const PERSON_PER_MONTH = {
 }
 
 function getPayerOfTheMonth(showWhoPayNext) {
-  const monthNumber = new Date().getMonth()
+  const monthNumber = new Date().getMonth();
+  const month = monthNumber === 11 ? 0 : monthNumber + 1;
   return (
-    (showWhoPayNext && PERSON_PER_MONTH[monthNumber + 1]) ||
+    (showWhoPayNext && PERSON_PER_MONTH[month]) ||
     PERSON_PER_MONTH[monthNumber]
   )
 }
